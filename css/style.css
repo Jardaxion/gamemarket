@@ -3417,6 +3417,10 @@ a.reg__but
         width: 100%;
         max-width: 100%;
     }
+    .modal__choiceAvatar-item
+    {
+        width: 100%;
+    }
     .footerMobile
     {
         position: fixed;
