@@ -7890,7 +7890,7 @@ a.reg__but
         display: flex;
 
         width: 100%;
-        padding: 14px 0 16px;
+        padding: 14px 0;
 
         color: var(--footerMobile-icon);
         border: 1px solid black;
