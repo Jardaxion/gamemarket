@@ -887,7 +887,7 @@ body::-webkit-scrollbar
 main
 {
     min-height: 46.4vh;
-    padding-top: 35px;
+    padding-top: 141px;
 
     background: var(--background-header);
 }
@@ -1828,6 +1828,17 @@ h1
     background: -o-linear-gradient(top, #ff9649 0%, #ff5c00 100%), -o-linear-gradient(bottom, #fff, #fff);
     background:    linear-gradient(180deg, #ff9649 0%, #ff5c00 100%), linear-gradient(0deg, #fff, #fff);
 }
+.button *
+{
+    font-family: 'GothamPro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+
+    letter-spacing: .005em;
+
+    color: white;
+}
 .button.effect
 {
     -webkit-box-shadow: 0 0 15px 0 rgba(255, 107, 0, .2901960784);
@@ -2185,7 +2196,24 @@ h1
 /* Хедер */
 .header
 {
+    position: fixed;
+    z-index: 11;
+
+    width: 100%;
+
+    -webkit-transition: .5s ease all;
+         -o-transition: .5s ease all;
+            transition: .5s ease all;
+
     background: var(--background-header);
+}
+.header.dontShow
+{
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+
+    opacity: 0;
 }
 .header__inner
 {
@@ -2193,7 +2221,7 @@ h1
     display: -ms-flexbox;
     display: flex;
 
-    padding: 36px 107px 23px 86px;
+    padding: 21px 107px 22px 86px;
 
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -2342,8 +2370,9 @@ h1
 }
 .header__login
 {
+    height: 100%;
     margin-right: 10px;
-    padding: 12px 35px 13px;
+    padding: 11px 35px 13px;
 }
 .header__login-img
 {
@@ -2364,7 +2393,8 @@ h1
 }
 .header__reg
 {
-    padding: 14px 37px 12px;
+    height: 100%;
+    padding: 11px 35px 13px;
 }
 .header__reg p
 {
@@ -2646,7 +2676,7 @@ h1
 .slider
 {
     margin-top: 13px;
-    margin-bottom: 138px;
+    margin-bottom: 103px;
 }
 .slider__inner
 {
@@ -2808,7 +2838,7 @@ h1
     position: relative;
     z-index: 2;
 
-    padding: 13px 64px 14px;
+    padding: 13px 64px 13px;
 
     -webkit-transition: .3s ease all;
          -o-transition: .3s ease all;
@@ -4793,7 +4823,7 @@ a.reg__but
 .marketTop
 {
     position: relative;
-    z-index: 11;
+    z-index: 10;
 
     margin-bottom: 22px;
 }
@@ -5182,10 +5212,6 @@ a.reg__but
     -ms-flex-align: center;
     align-items: center;
 }
-.marketTop__basket-basket
-{
-    margin-right: 10px;
-}
 .marketTop__basket-basket *
 {
     fill: var(--footerMobile-icon);
@@ -5196,8 +5222,6 @@ a.reg__but
     font-size: 12px;
     font-weight: 300;
     line-height: 14px;
-
-    margin-top: 3px;
 
     letter-spacing: .005em;
 
@@ -5477,13 +5501,9 @@ a.reg__but
 {
     overflow: auto;
 
-    height: 100%;
+    height: 64vh;
     max-height: 849px;
     padding-right: 47px;
-}
-.marketBottom__right.fav
-{
-    margin-left: 32px;
 }
 .marketBottom__right::-webkit-scrollbar
 {
@@ -5561,17 +5581,12 @@ a.reg__but
 }
 .marketBottom__innerMarket
 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
 
     width: 100%;
+    padding-right: 5px;
 
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: start;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    grid-template-columns: repeat(6, 1fr);
     gap: 19px 14px;
 }
 .marketBottom__card
@@ -5584,7 +5599,7 @@ a.reg__but
     display: flex;
         flex-direction: column;
 
-    width: 203px;
+    width: 100%;
     min-height: 200px;
     padding: 24px 15px 6px 16px;
 
@@ -6904,6 +6919,8 @@ a.reg__but
 }
 .marketBottom__market2-arrow
 {
+    display: none;
+
     cursor: pointer;
 }
 .marketBottom__market2-arrow:first-of-type
@@ -6916,7 +6933,7 @@ a.reg__but
 }
 .marketBottom__market2-pag
 {
-    position: relative;
+    position: relative !important;
     bottom: auto !important;
     left: auto !important;
 
@@ -6925,6 +6942,9 @@ a.reg__but
     display: flex;
 
     width: 388px !important;
+    height: 17px !important;
+
+    background: #44444a;
 
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -6953,6 +6973,10 @@ a.reg__but
 {
     cursor: default;
 
+    background: #f72;
+}
+.marketBottom__market2-pag .swiper-scrollbar-drag
+{
     background: #f72;
 }
 .marketBottom__market2-sell--text
@@ -10627,6 +10651,10 @@ a.reg__but
         width: 30px;
         height: auto;
     }
+    .marketBottom__innerMarket
+    {
+        grid-template-columns: repeat(5, 1fr);
+    }
     .marketBottom__box.message::after
     {
         bottom: 37px;
@@ -10727,6 +10755,10 @@ a.reg__but
     .marketBottom__box-text
     {
         margin-top: 6px;
+    }
+    .marketBottom__innerMarket
+    {
+        grid-template-columns: repeat(4, 1fr);
     }
     .marketBottom__chatSelect-name
     {
@@ -11100,6 +11132,10 @@ a.reg__but
         width: 138px;
         padding: 21px 18px 39px 16px;
     }
+    .marketBottom__innerMarket
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
     .marketBottom__lot-text::before
     {
         font-size: 8px;
@@ -11223,6 +11259,7 @@ a.reg__but
     }
     main
     {
+        padding-top: 77px;
         padding-bottom: 101px;
     }
     .header__inner
@@ -11246,7 +11283,7 @@ a.reg__but
     {
         position: absolute;
         z-index: 20;
-        top: 82px;
+        top: 75px;
         left: 0;
 
         width: 100%;
@@ -11380,7 +11417,7 @@ a.reg__but
              -o-transition: .3s ease all;
                 transition: .3s ease all;
 
-        background: var(--main);
+        background: var(--main) !important;
     }
     .header__menu-button div:nth-of-type(2)
     {
@@ -13888,7 +13925,7 @@ a.reg__but
     .chatMobile__input-wrapper
     {
         position: fixed;
-        bottom: 101px;
+        bottom: 84px;
         left: 0;
 
         display: -webkit-box;
