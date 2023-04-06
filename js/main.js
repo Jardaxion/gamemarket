@@ -127,7 +127,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         $(this).toggleClass('active');
-        $(this).next().slideToggle('100');
+        $(this).next().slideToggle(200);
     })
 
     //Открытие/закрытие меню в хедере
@@ -277,6 +277,15 @@ $(document).ready(function() {
         }
     });
 
+    $('.marketBottom__market2-pag').width($('.marketBottom__market2-bigBlock--grey-wrapper').width());
+
+
+    let heightOfAll = 200;
+    $('.marketBottom__market2-content .marketBottom__market2-bigBlock').each(function(){
+        heightOfAll += $(this).height();
+    })
+    $('.marketBottom__market2-top').height(heightOfAll);
+
     //Слайдер на главном экране в блоке
     let blockSlider = new Swiper('.block__buttons-wrapper', {
         loop: false,
@@ -285,6 +294,7 @@ $(document).ready(function() {
         width: null,
         scrollbar: {
             el: '.block__buttons-scrollbar',
+            draggable: true,
         },
         breakpoints: {
             960: {
@@ -465,6 +475,11 @@ $(document).ready(function() {
 
     $('.addLot__select-title').on('click', function(e){
         e.preventDefault();
+        if(!$('.addLot__select-title.active').is($(this))){
+            $('.addLot__select-title.active').removeClass('active');
+            $('.addLot__select-select.active').removeClass('active');
+        }
+
         $(this).toggleClass('active');
         $(this).next().toggleClass('active');
     })
