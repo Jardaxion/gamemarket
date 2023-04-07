@@ -7004,7 +7004,7 @@ a.reg__but
     width: 100%;
     max-width: 800px;
 }
-.marketBottom__market2 .marketBottom__market2-titleLine--char .marketBottom__market2-titleLine--titleBlock:not(:first-of-type)
+.marketBottom__market2 .marketBottom__market2-titleLine--char .marketBottom__market2-titleLine--titleBlock:not(:first-of-type :nt)
 {
     padding-left: 10px;
 }
@@ -7331,7 +7331,7 @@ a.reg__but
     height: 17px !important;
     margin-left: 176px;
 
-    background: #44444a;
+    background: var(--scrollbar-color);
 
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -7441,7 +7441,6 @@ a.reg__but
 .marketBottom__market2-titleLine svg
 {
     margin-top: 2px;
-    margin-left: 10px;
 }
 .marketBottom__market2-titleLine--title
 {

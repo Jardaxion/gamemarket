@@ -43,6 +43,7 @@ $(document).ready(function() {
     if($('.marketBottom__right').hasClass('marketBottom__market2')){
         let i = 0;
         let j = 0;
+        let k = 0;
         $('.marketBottom__market2-bigBlock:first-of-type .marketBottom__market2-block--wrapper').each(function(){
             let item = $($('.marketBottom__market2-titleLine').children()[i]);
 
@@ -53,7 +54,16 @@ $(document).ready(function() {
                 
                 newItem.width(char.width());
                 newItem.css({'marginLeft': char.css('margin-left')});
+                newItem.css({'paddingLeft': char.children('hr').css('margin-right')});
                 newItem.css({'marginRight': char.css('padding-right')});
+
+                if($($(item.children()[0]).children()[j+1]).length === 0){
+                    i++;
+                }
+
+                console.log(char);
+                console.log(char.width());
+
                 j++;
                 
             } else {
