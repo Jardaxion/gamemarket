@@ -6933,11 +6933,38 @@ a.reg__but
 {
     position: absolute;
 
+        flex-direction: column;
+
     height: 100%;
 
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+}
+.marketBottom__market2 .marketBottom__market2-titleLine
+{
+    position: -webkit-sticky;
+    position:         sticky;
+    z-index: 2;
+    top: 37px;
+
+    margin-top: 20px;
+}
+.marketBottom__market2 .marketBottom__market2-titleLine--titleBlock
+{
+    position: static;
+}
+.marketBottom__market2 .swiper-slide
+{
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
 }
 .marketBottom__market2 .marketBottom__market2-blocks
 {
@@ -6966,31 +6993,20 @@ a.reg__but
     top: 0;
 
     width: 100%;
-    height: 17px;
+    height: 66px;
 
     content: '';
 
     background: var(--background-header);
 }
-.marketBottom__market2 .marketBottom__market2-titleLine--titleBlock
+.marketBottom__market2 .marketBottom__market2-titleLine--char
 {
-    position: absolute;
-
-    height: 800px;
-
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: start;
+    width: 100%;
+    max-width: 800px;
 }
-.marketBottom__market2 .marketBottom__market2-titleLine--titleBlock *
+.marketBottom__market2 .marketBottom__market2-titleLine--char .marketBottom__market2-titleLine--titleBlock:not(:first-of-type)
 {
-    position: -webkit-sticky;
-    position:         sticky;
-    top: 0;
-}
-.marketBottom__market2 .marketBottom__market2-pag
-{
-    margin-left: 189px;
+    padding-left: 10px;
 }
 .marketBottom__market2 .marketBottom__market2-block
 {
@@ -7020,7 +7036,7 @@ a.reg__but
 .marketBottom__market2-content
 {
     height: 760px;
-    margin-top: 70px;
+    margin-top: 76px;
     padding-right: 11px;
 }
 .marketBottom__market2-block
@@ -7304,6 +7320,7 @@ a.reg__but
 .marketBottom__market2-pag
 {
     position: relative !important;
+    z-index: 5;
     bottom: auto !important;
     left: auto !important;
 
@@ -7312,7 +7329,7 @@ a.reg__but
     display: flex;
 
     height: 17px !important;
-    margin-left: 25px;
+    margin-left: 176px;
 
     background: #44444a;
 
@@ -7393,6 +7410,16 @@ a.reg__but
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
+.marketBottom__market2-titleLine--titleBlock-wrapper
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
 }
 .marketBottom__market2-titleLine--titleBlock.active svg
 {
@@ -7543,6 +7570,10 @@ a.reg__but
 .marketBottom__market2-bigBlock--grey .marketBottom__market2-block--wrapper:not(:first-of-type) .marketBottom__market2-titleLine--titleBlock
 {
     margin-left: 18px;
+}
+.marketBottom__market2-bigBlock--grey .marketBottom__market2-titleLine--titleBlock-wrapper
+{
+    top: 12px !important;
 }
 .marketBottom__market2-bigBlock--grey .swiper-slide
 {
