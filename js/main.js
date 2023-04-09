@@ -123,6 +123,7 @@ $(document).ready(function() {
         })
     })
 
+    let marketSliders = [];
     document.querySelectorAll('.marketBottom__lots-box .marketBottom__market2-bigBlock:not(.notAnav) .marketBottom__market2-bigBlock--grey-wrapper').forEach(function(el){
         let blockWithNavChilder = el.parentNode.parentNode.parentNode.children;
         let blockWithNav;
@@ -134,7 +135,7 @@ $(document).ready(function() {
             }
         }
         
-        new Swiper(el, {
+        marketSliders.push(new Swiper(el, {
             scrollbar: {
                 el: blockWithNav.children[1],
                 draggable: true,
@@ -144,7 +145,7 @@ $(document).ready(function() {
                 nextEl: blockWithNav.children[2],
                 prevEl: blockWithNav.children[0],
             }
-        })
+        }))
     })
 
     
@@ -329,11 +330,6 @@ $(document).ready(function() {
             clickable: true,
         }
     });
-
-    $('.marketBottom__market2-pag').width($('.marketBottom__market2-bigBlock--grey-wrapper').width());
-    $(window).on('resize', () => {
-        $('.marketBottom__market2-pag').width($('.marketBottom__market2-bigBlock--grey-wrapper').width());
-    })
 
     let heightOfAll = 200;
     $('.marketBottom__market2-content .marketBottom__market2-bigBlock').each(function(){
@@ -542,6 +538,16 @@ $(document).ready(function() {
 
         $(this).toggleClass('active');
         $(this).next().toggleClass('active');
+    })
+    $('.marketBottom__market2-pag').width($('.marketBottom__market2-bigBlock--grey-wrapper').width());
+    $(window).on('resize', () => {
+        $('.marketBottom__market2-pag').width($('.marketBottom__market2-bigBlock--grey-wrapper').width());
+        marketSliders.forEach(function(el){
+            el.update();
+        })
+    })
+    marketSliders.forEach(function(el){
+        el.update();
     })
 })
 
