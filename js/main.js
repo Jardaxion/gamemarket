@@ -125,7 +125,6 @@ $(document).ready(function() {
 
     $('.marketTop__settings-menu--selectPage').on('click', function(e){
         e.preventDefault();
-
         $('.marketTop__settings-menu--selectPage.active').removeClass('active');
         $(this).addClass('active');
 
@@ -282,6 +281,8 @@ $(document).ready(function() {
 
     $('.marketTop__settings').click(function(e){
         e.preventDefault();
+
+        $('body').toggleClass('noScroll');
 
         $('.marketTop__settings-menu').toggleClass('active');
     })
@@ -482,25 +483,7 @@ $(document).ready(function() {
         if(!$(e.target).is($('.marketTop__mobileSorting *'))){
             $('.marketTop__sorting-choose').removeClass('show');
         }
-
-        // console.log(e.target);
     })
-
-    // if (/iPhone/.test(navigator.userAgent) && !window.MSStream)
-    // {
-    //     $(document).on("focus", "input, textarea, select", function()
-    //     {
-    //         $('meta[name=viewport]').remove();
-    //         $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">');
-    //     });
-
-    //     $(document).on("blur", "input, textarea, select", function()
-    //     {
-    //         $('meta[name=viewport]').remove();
-    //         $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
-    //     });
-    // }
-
     document.querySelectorAll('.lineSlider').forEach(function(el){
         new Swiper(el, {
             loop: false,
@@ -600,7 +583,6 @@ $(document).ready(function() {
 if($('main').hasClass('mobileChat')){
     window.scrollTo(0, document.body.scrollHeight);
 }
-document.querySelector('.marketBottom__chats-chat--wrapper').scrollTo(0, document.body.scrollHeight)
 
 //Модальные окна
 //Открытие
@@ -629,3 +611,5 @@ function adap(fClass, sClass){
     sClass = '.marketBottom__market2-titleLine--' + sClass;
     $(fClass).width($(sClass).width());
 }
+
+document.querySelector('.marketBottom__chats-chat--wrapper').scrollTo(0, document.body.scrollHeight)
